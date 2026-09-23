@@ -325,11 +325,18 @@ section{position:relative}
 .pro-top{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}
 .pro-nesto{width:clamp(96px,11vw,136px);height:clamp(150px,17vw,210px);position:relative}
 .pro-nesto img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom}
-.price-range{margin-top:18px}
-.price-range input[type=range]{background:rgba(255,255,255,.18)}
-.price-range input[type=range]::-webkit-slider-thumb{background:var(--sun);box-shadow:0 3px 0 var(--sun-deep)}
-.price-range input[type=range]::-moz-range-thumb{background:var(--sun);box-shadow:0 3px 0 var(--sun-deep)}
-.notches{display:flex;justify-content:space-between;font-weight:900;font-size:13px;color:#C9E7C1;margin-top:8px}
+.price-range{margin-top:20px;padding-inline:4px}
+.price-range input[type=range]{--fill:0%;-webkit-appearance:none;appearance:none;display:block;width:100%;height:14px;margin:0;border-radius:7px;cursor:pointer;outline:none;
+  background:linear-gradient(90deg,var(--sun) 0 var(--fill),rgba(255,255,255,.2) var(--fill) 100%)}
+.price-range input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:32px;height:32px;border-radius:50%;background:#fff;border:6px solid var(--sun);box-shadow:0 4px 0 var(--sun-deep),0 6px 14px rgba(0,0,0,.25);cursor:grab;transition:transform .15s}
+.price-range input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:6px solid var(--sun);box-shadow:0 4px 0 var(--sun-deep),0 6px 14px rgba(0,0,0,.25);cursor:grab}
+.price-range input[type=range]::-moz-range-track{background:transparent;border:0}
+.price-range input[type=range]:active::-webkit-slider-thumb{transform:scale(1.1);cursor:grabbing}
+.price-range input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 4px 0 var(--sun-deep),0 0 0 4px rgba(255,255,255,.55)}
+.price-range input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 4px 0 var(--sun-deep),0 0 0 4px rgba(255,255,255,.55)}
+.notches{display:flex;justify-content:space-between;font-weight:900;font-size:13px;color:#C9E7C1;margin-top:12px}
+.notches span{cursor:pointer;transition:color .2s}
+.notches span.on{color:#fff}
 .plan.pro ul{grid-template-columns:1fr 1fr;gap:10px 16px}
 @media (max-width:900px){.pricing{grid-template-columns:1fr}}
 @media (max-width:480px){.plan.pro ul{grid-template-columns:1fr}}
@@ -435,7 +442,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 <section class="mission sec" id="mission">
   <div class="wrap" style="position:relative">
     <span class="eyebrow">Notre mission</span>
-    <p class="big-words" id="bigWords">À l'école, on t'apprend Pythagore. Personne ne t'explique ton premier salaire, le Livret A ou un ETF. CRESKO est né pour ça.</p>
+    <p class="big-words" id="bigWords">À l'école, on t'apprend Pythagore. Personne ne t'explique les dividendes, le Livret A ou un ETF. CRESKO est né pour ça.</p>
     <img class="mission-nesto" src="img/apprenant.webp" alt="Nesto qui lit un livre">
     <div class="pillars">
       <div class="pillar" data-reveal>
@@ -557,13 +564,13 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
       <!-- Légendes -->
       <article class="tile t-legend" data-reveal>
         <span class="kicker">Les Légendes</span>
-        <h3>Leur vie, racontée par eux.</h3>
+        <h3>Ils te racontent leur histoire.</h3>
         <div class="deck" id="deck">
           <div class="lcard" style="background:#1A9A8E"><span class="lab">Légende</span><img class="lpic" src="img/leg-buffett.webp" alt="Warren Buffett, version dessinée de l'app"><div class="ltxt"><div class="nm">Warren Buffett</div><div class="hk">Sa première action, il l'achète à 11 ans.</div></div></div>
           <div class="lcard" style="background:#8B5CC9"><span class="lab">Légende</span><img class="lpic" src="img/leg-jobs.webp" alt="Steve Jobs, version dessinée de l'app"><div class="ltxt"><div class="nm">Steve Jobs</div><div class="hk">Viré de la boîte qu'il a fondée, puis revenu la sauver.</div></div></div>
           <div class="lcard" style="background:#2E86C1"><span class="lab">Légende</span><img class="lpic" src="img/leg-niel.webp" alt="Xavier Niel, version dessinée de l'app"><div class="ltxt"><div class="nm">Xavier Niel</div><div class="hk">Il lance Free, puis casse les prix du mobile en France.</div></div></div>
         </div>
-        <p class="d" style="font-size:15px">Leur histoire, puis un Vrai ou Bluff pour voir si t'as suivi.</p>
+        <p class="d" style="font-size:15px">Puis un Vrai ou Bluff pour voir si t'as suivi.</p>
       </article>
 
       <!-- Série -->
@@ -657,7 +664,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <div class="price-range">
           <label class="sr" for="priceRange">Choisis ton prix</label>
           <input id="priceRange" type="range" min="0" max="2" step="1" value="0">
-          <div class="notches"><span>5,99 €</span><span>8,99 €</span><span>11,99 €</span></div>
+          <div class="notches" id="notches"><span data-p="0" class="on">5,99 €</span><span data-p="1">8,99 €</span><span data-p="2">11,99 €</span></div>
         </div>
         <ul>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>4 leçons par jour</li>
@@ -815,16 +822,27 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 
   /* ── Prix ── */
   var PRICES = ['5,99 €','8,99 €','11,99 €'];
-  $('#priceRange').addEventListener('input', function(){
-    var p = +this.value;
+  var priceRange = $('#priceRange'), shownPose = 0;
+  function setPrice(p){
+    priceRange.value = p;
+    priceRange.style.setProperty('--fill', (p/2*100)+'%');
     $('#priceOut').innerHTML = PRICES[p]+'<small class="muted"> /mois</small>';
+    $$('#notches span').forEach(function(s){ s.classList.toggle('on', +s.dataset.p === p); });
+    if (p === shownPose) return;
+    shownPose = p;
+    // une seule pose visible : on coupe net les autres (sinon deux fondus se croisent quand on glisse vite)
     $$('#proNesto img').forEach(function(img){
       var on = +img.dataset.p === p;
-      if (hasGsap && !reduced){ gsap.to(img,{opacity:on?1:0,y:on?0:12,scale:on?1:.9,duration:on?.5:.2,ease:on?'back.out(2)':'power1.out'}); }
-      else img.style.opacity = on?1:0;
+      if (hasGsap) gsap.killTweensOf(img);
+      if (!on){ if (hasGsap) gsap.set(img,{opacity:0}); else img.style.opacity = 0; return; }
+      if (hasGsap && !reduced) gsap.fromTo(img,{opacity:0,y:14,scale:.88},{opacity:1,y:0,scale:1,duration:.45,ease:'back.out(2)'});
+      else { if (hasGsap) gsap.set(img,{opacity:1,y:0,scale:1}); img.style.opacity = 1; }
     });
     if (hasGsap && !reduced) gsap.fromTo('#priceOut',{scale:.9},{scale:1,duration:.4,ease:'back.out(3)'});
-  });
+  }
+  priceRange.addEventListener('input', function(){ setPrice(+this.value); });
+  $$('#notches span').forEach(function(s){ s.addEventListener('click', function(){ setPrice(+s.dataset.p); }); });
+  setPrice(0);
 
   /* ── Mots de la mission ── */
   var bw = $('#bigWords');
