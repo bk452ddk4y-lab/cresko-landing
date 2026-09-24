@@ -21,9 +21,18 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap">
+<!-- Polices HÉBERGÉES ICI (fonts/), jamais chargées depuis Google : chaque visite enverrait l'IP
+     du visiteur à Google sans consentement (condamné par le tribunal de Munich, 20 janv. 2022). -->
+<style>
+@font-face{font-family:'Baloo 2';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/Baloo2_600SemiBold.ttf') format('truetype')}
+@font-face{font-family:'Baloo 2';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/Baloo2_700Bold.ttf') format('truetype')}
+@font-face{font-family:'Baloo 2';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/Baloo2_800ExtraBold.ttf') format('truetype')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/Nunito_600SemiBold.ttf') format('truetype')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/Nunito_700Bold.ttf') format('truetype')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/Nunito_800ExtraBold.ttf') format('truetype')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url('/fonts/Nunito_900Black.ttf') format('truetype')}
+@font-face{font-family:'Nunito';font-style:italic;font-weight:600;font-display:swap;src:url('/fonts/Nunito_600SemiBold_Italic.ttf') format('truetype')}
+</style>
 <style>
 :root{
   color-scheme: light;
@@ -724,9 +733,11 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 <div class="fx-layer" id="fx" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- Scripts HÉBERGÉS ICI (vendor/, GSAP 3.12.5 et Lenis 1.1.13), plus sur cdnjs / jsdelivr :
+     chaque visite aurait transmis l'IP du visiteur à un tiers, comme les polices Google. -->
+<script src="/vendor/gsap.min.js"></script>
+<script src="/vendor/ScrollTrigger.min.js"></script>
+<script src="/vendor/lenis.min.js"></script>
 <script>
 (function(){
   // ⚙️ Le jour où l'app sort : mettre ici le lien App Store, les boutons « Bientôt sur » deviennent de vrais liens.
