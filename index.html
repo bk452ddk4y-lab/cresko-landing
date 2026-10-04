@@ -325,7 +325,7 @@ section{position:relative}
 .pricing{display:grid;grid-template-columns:1fr 1.25fr;gap:20px;margin-top:56px;align-items:stretch}
 .plan{border-radius:28px;padding:clamp(24px,3vw,36px);background:var(--card);border:1.5px solid #EFE4CB;box-shadow:0 6px 0 var(--edge);display:flex;flex-direction:column}
 .plan h3{font-size:34px}
-.plan .price{font-family:var(--display);font-weight:800;font-size:58px;line-height:1;margin-top:10px;font-variant-numeric:tabular-nums}
+.plan .price{font-family:var(--display);font-weight:800;font-size:58px;line-height:1;margin-top:10px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .plan .price small{font-size:20px;color:var(--muted);font-weight:700}
 .plan ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
 .plan li{display:flex;gap:10px;align-items:flex-start;font-size:16px}
@@ -422,8 +422,8 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 
     <div class="float" data-depth="1.4" data-speed="-0.5" style="left:4%;top:22%;width:clamp(46px,6vw,86px)"><img src="img/coin.webp" alt=""></div>
     <div class="float" data-depth="0.8" data-speed="-0.25" style="left:13%;top:62%;width:clamp(40px,4.6vw,66px)"><img src="img/star.webp" alt=""></div>
-    <div class="float" data-depth="1.1" data-speed="-0.6" style="right:5%;top:16%;width:clamp(60px,8vw,120px)"><img src="img/chest.webp" alt=""></div>
-    <div class="float" data-depth="0.6" data-speed="-0.35" style="right:14%;top:64%;width:clamp(44px,5.4vw,78px)"><img src="img/cup-or.webp" alt=""></div>
+    <div class="float" data-depth="1.1" data-speed="-0.6" style="right:5%;top:16%;width:clamp(60px,8vw,120px)"><img src="img/chest-epique.webp" alt=""></div>
+    <div class="float" data-depth="0.6" data-speed="-0.35" style="right:14%;top:64%;width:clamp(44px,5.4vw,78px)"><img src="img/paw-or.webp" alt=""></div>
     <div class="float" data-depth="1.7" data-speed="-0.7" style="left:30%;top:4%;width:clamp(30px,3.4vw,50px)"><img src="img/coin.webp" alt=""></div>
     <div class="float" data-depth="1.2" data-speed="-0.45" style="right:30%;top:2%;width:clamp(28px,3vw,44px)"><img src="img/star.webp" alt=""></div>
 
@@ -486,23 +486,21 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
   <div class="lesson-inner">
     <div class="lesson-text">
       <div class="steps" id="steps">
-        <div class="step on"><span class="num">1 / 5</span><h3>Une notion. Cinq minutes.</h3><p>Chaque leçon attaque une seule idée, avec un exemple chiffré du début à la fin. Tu la finis dans le bus.</p></div>
-        <div class="step"><span class="num">2 / 5</span><h3>Tu devines avant de savoir.</h3><p>On te fait deviner le chiffre avant de le montrer. C'est l'écart avec ce que tu croyais qui te reste en tête.</p></div>
-        <div class="step"><span class="num">3 / 5</span><h3>Le quiz qui s'embrase.</h3><p>Enchaîne les bonnes réponses : à ×3, ton combo prend feu. Une erreur, et il retombe à zéro.</p></div>
-        <div class="step"><span class="num">4 / 5</span><h3>Un défi pour finir.</h3><p>Glisser, trier, relier : un mini-jeu pour vérifier que c'est vraiment acquis.</p></div>
-        <div class="step"><span class="num">5 / 5</span><h3>Et tu montes de niveau.</h3><p>XP, étoiles, pièces, trophées. Nesto garde la trace de tout ce que tu as compris.</p></div>
+        <div class="step on"><span class="num">1 / 4</span><h3>Une notion. Cinq minutes.</h3><p>Chaque leçon attaque une seule idée, avec un exemple chiffré du début à la fin. Tu la finis dans le bus.</p></div>
+        <div class="step"><span class="num">2 / 4</span><h3>Enchaîne les bonnes réponses.</h3><p>Trois questions sur ce que tu viens de lire. Chaque bonne réponse fait grimper ton combo, et une erreur le remet à zéro.</p></div>
+        <div class="step"><span class="num">3 / 4</span><h3>Un défi pour finir.</h3><p>Glisser, trier, relier : un mini-jeu pour vérifier que c'est vraiment acquis.</p></div>
+        <div class="step"><span class="num">4 / 4</span><h3>Et tu montes de niveau.</h3><p>XP, étoiles, pièces. Sur la route, des bonus à choisir. Nesto garde la trace de tout ce que tu as compris.</p></div>
       </div>
-      <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     </div>
 
     <div class="phone-wrap" id="phoneWrap">
       <div class="phone" id="phone">
         <div class="screen-area">
-          <img class="screen shot on" src="img/app-notion.webp" alt="Écran de leçon CRESKO : une action, une part du gâteau" width="923" height="2000">
-          <img class="screen shot" src="img/app-deviner.webp" alt="Écran CRESKO : carte à deviner sur l'inflation" width="923" height="2000" loading="lazy">
-          <img class="screen shot" src="img/app-quiz.webp" alt="Écran CRESKO : quiz avec le combo ×3" width="603" height="1311" loading="lazy">
+          <img class="screen shot on" src="img/app-notion.webp" alt="Écran de leçon CRESKO : épargner ou investir, avec 1 000 €" width="923" height="2000">
+          <img class="screen shot" src="img/app-quiz.webp" alt="Écran CRESKO : question du quiz, combo ×4" width="923" height="2000" loading="lazy">
           <img class="screen shot" src="img/app-defi.webp" alt="Écran CRESKO : le défi, glisser le bon mot dans chaque trou" width="923" height="2000" loading="lazy">
-          <img class="screen shot" src="img/app-fin.webp" alt="Écran CRESKO : fin de leçon, +80 XP" width="923" height="2000" loading="lazy">
+          <img class="screen shot" src="img/app-fin.webp" alt="Écran CRESKO : fin de leçon, +95 XP" width="923" height="2000" loading="lazy">
         </div>
       </div>
     </div>
@@ -523,7 +521,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
       <article class="tile t-path" data-reveal>
         <span class="kicker">Le parcours</span>
         <h3>6 chapitres, de zéro à expert.</h3>
-        <p class="d">29 leçons dans l'ordre où tu en as besoin : d'abord comprendre, ensuite te défendre, puis passer à l'action.</p>
+        <p class="d">33 leçons dans l'ordre où tu en as besoin : d'abord comprendre, ensuite te défendre, puis passer à l'action.</p>
         <div class="path-box" id="pathBox">
           <svg viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
             <path id="trailBg" d="M40 210 C 150 210, 170 80, 230 80 S 330 220, 420 220 S 540 70, 610 70 S 720 230, 800 220 S 910 90, 960 90" fill="none" stroke="#C8E0BD" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22"/>
@@ -558,7 +556,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
       <article class="tile t-market" data-reveal>
         <span class="kicker">Les marchés</span>
         <h3>Les vrais cours, zéro risque.</h3>
-        <p class="d">Suis les actions et les cryptos en direct, puis entraîne-toi avec un portefeuille virtuel : de l'argent fictif, de vraies décisions.</p>
+        <p class="d">Suis les actions et les ETF en direct, puis entraîne-toi avec un portefeuille virtuel : de l'argent fictif, de vraies décisions.</p>
         <div class="chart">
           <div class="chart-top"><span class="tk">Portefeuille virtuel</span><span class="live"><i></i>Cours réels</span></div>
           <svg viewBox="0 0 400 150" aria-hidden="true">
@@ -580,6 +578,8 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
           <div class="lcard" style="background:#1A9A8E"><span class="lab">Légende</span><img class="lpic" src="img/leg-buffett.webp" alt="Warren Buffett, version dessinée de l'app"><div class="ltxt"><div class="nm">Warren Buffett</div><div class="hk">Sa première action, il l'achète à 11 ans.</div></div></div>
           <div class="lcard" style="background:#8B5CC9"><span class="lab">Légende</span><img class="lpic" src="img/leg-jobs.webp" alt="Steve Jobs, version dessinée de l'app"><div class="ltxt"><div class="nm">Steve Jobs</div><div class="hk">Viré de la boîte qu'il a fondée, puis revenu la sauver.</div></div></div>
           <div class="lcard" style="background:#2E86C1"><span class="lab">Légende</span><img class="lpic" src="img/leg-niel.webp" alt="Xavier Niel, version dessinée de l'app"><div class="ltxt"><div class="nm">Xavier Niel</div><div class="hk">Il lance Free, puis casse les prix du mobile en France.</div></div></div>
+          <div class="lcard" style="background:#12946A"><span class="lab">Légende</span><img class="lpic" src="img/leg-bezos.webp" alt="Jeff Bezos, version dessinée de l'app"><div class="ltxt"><div class="nm">Jeff Bezos</div><div class="hk">Son action a perdu 90 %. Il n'a rien changé.</div></div></div>
+          <div class="lcard" style="background:#D9573B"><span class="lab">Légende</span><img class="lpic" src="img/leg-jordan.webp" alt="Michael Jordan, version dessinée de l'app"><div class="ltxt"><div class="nm">Michael Jordan</div><div class="hk">Il a gagné plus après le basket que pendant.</div></div></div>
         </div>
         <p class="d" style="font-size:15px">Puis un Vrai ou Bluff pour voir si t'as suivi.</p>
       </article>
@@ -592,7 +592,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#F97C50" d="M12.6 2.2c.4 3-1.2 4.6-2.6 6.1C8.6 9.8 7 11.4 7 14.3A5 5 0 0 0 12 19.5a5 5 0 0 0 5-5.2c0-1.7-.7-3-1.5-4 .1 1.3-.4 2.3-1.3 2.8.4-3.2-.5-7.5-1.6-10.9z"/><path fill="#FFC94A" d="M12 12.5c-1.3 1.2-2 2.2-2 3.4a2 2 0 0 0 4 0c0-1.2-.8-2.2-2-3.4z"/></svg>
           <span class="n" id="streakN">30</span><span class="u">jours<br>de série</span>
         </div>
-        <div class="cups" id="cups"><img src="img/cup-bronze.webp" alt="Trophée bronze"><img src="img/cup-argent.webp" alt="Trophée argent"><img src="img/cup-or.webp" alt="Trophée or"><img src="img/cup-diamant.webp" alt="Trophée diamant"></div>
+        <div class="cups" id="cups"><img src="img/paw-bronze.webp" alt="Trophée bronze"><img src="img/paw-argent.webp" alt="Trophée argent"><img src="img/paw-or.webp" alt="Trophée or"><img src="img/paw-diamant.webp" alt="Trophée diamant"></div>
         <p class="d" style="font-size:15px">Missions du jour, coffres, ligue du mois entre amis.</p>
       </article>
 
@@ -656,7 +656,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <h3>Gratuit</h3>
         <div class="price">0 €</div>
         <ul>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les 23 leçons de base</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les 24 leçons de base</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>1 leçon par jour</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Ta première Légende offerte</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le Journal et le quiz du jour</li>
@@ -680,12 +680,14 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <ul>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>4 leçons par jour</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Toutes les Légendes</li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>6 leçons exclusives</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>9 leçons exclusives</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>4 leçons bonus</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le portefeuille virtuel</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La ligue du mois</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les gels de série</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le Bilan final</li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le Comparateur</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La révision du Dico chaque jour</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Ton code parrain pour 2 jeunes</li>
         </ul>
         <p class="muted" style="margin-top:auto;padding-top:20px;font-size:14px">Abonnement mensuel sans engagement, résiliable à tout moment depuis ton iPhone.</p>
       </div>
@@ -964,13 +966,14 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     stepsEls.forEach(function(el,k){ el.classList.toggle('on', k===i); });
     screens.forEach(function(el,k){ el.classList.toggle('on', k===i); });
     dots.forEach(function(el,k){ el.classList.toggle('on', k===i); });
-    if (i === 4 && !reduced){ var r = phone.getBoundingClientRect(); burst(r.left+r.width/2, r.top+r.height*.35, 14); }
+    var last = stepsEls.length - 1;
+    if (i === last && !reduced){ var r = phone.getBoundingClientRect(); burst(r.left+r.width/2, r.top+r.height*.35, 14); }
   }
   lessonSec.classList.add('pin');
   ScrollTrigger.create({
-    trigger: lessonSec, start:'top top', end: function(){ return '+=' + window.innerHeight*4; },
+    trigger: lessonSec, start:'top top', end: function(){ return '+=' + window.innerHeight*(stepsEls.length-1); },
     pin:true, anticipatePin:1,
-    onUpdate:function(s){ setStep(Math.min(4, Math.floor(s.progress*5))); },
+    onUpdate:function(s){ setStep(Math.min(stepsEls.length-1, Math.floor(s.progress*stepsEls.length))); },
     onRefreshInit: fitPhone
   });
 
