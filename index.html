@@ -313,14 +313,24 @@ section{position:relative}
 .big-words{font-family:var(--display);font-weight:800;font-size:clamp(34px, 5.2vw, 72px);line-height:1.08;margin-top:18px;max-width:22ch;text-wrap:balance}
 .big-words .w{color:rgba(246,237,214,.2);transition:color .2s}
 .big-words .w.hl{color:var(--sun)}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:70px}
-.pillar{background:var(--night-2);border-radius:24px;padding:26px;border:1.5px solid #214A32}
-.pillar h3{font-size:26px;color:#fff}
-.pillar p{margin-top:10px;color:#B9CBB9;font-size:16px}
-.pillar .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px}
-.pillar .ic svg{width:26px;height:26px}
+.bulbs{display:grid;gap:clamp(56px,8vw,110px);margin-top:clamp(70px,9vw,120px)}
+.bulb h3{font-size:clamp(34px,5vw,68px);line-height:1.05;max-width:18ch;color:#FFF6DC;text-shadow:0 0 22px rgba(255,201,74,.3)}
+.bulb p{margin-top:16px;font-size:clamp(17px,1.5vw,20px);color:#C9D8C6;max-width:34rem}
+/* Ampoules (4 oct.) : chaque phrase s'allume D'UN COUP quand on arrive dessus — petit grésillement,
+   éclat, puis lumière stable. Sans JS / mouvement réduit : tout est allumé d'office. */
+.bulbs.armed .bulb h3{color:rgba(246,237,214,.13);text-shadow:none}
+.bulbs.armed .bulb p{opacity:0;transform:translateY(8px);transition:opacity .35s ease .18s,transform .35s ease .18s}
+.bulbs.armed .bulb.on h3{color:#FFF6DC;text-shadow:0 0 22px rgba(255,201,74,.3);animation:bulbOn .6s linear both}
+.bulbs.armed .bulb.on p{opacity:1;transform:none}
+@keyframes bulbOn{
+  0%{color:rgba(246,237,214,.13);text-shadow:none}
+  7%{color:#FFFDF4;text-shadow:0 0 30px rgba(255,201,74,.95),0 0 80px rgba(255,201,74,.6)}
+  13%{color:rgba(246,237,214,.3);text-shadow:none}
+  21%{color:#FFFDF4;text-shadow:0 0 36px rgba(255,201,74,1),0 0 110px rgba(255,201,74,.7)}
+  100%{color:#FFF6DC;text-shadow:0 0 22px rgba(255,201,74,.3)}
+}
 .mission-nesto{position:absolute;right:max(var(--gutter), calc(50% - 600px));top:clamp(60px,9vw,130px);width:clamp(120px,16vw,230px);opacity:.98}
-@media (max-width:900px){.pillars{grid-template-columns:1fr}.mission-nesto{position:relative;right:auto;top:auto;margin:40px auto 0;width:150px}}
+@media (max-width:900px){.mission-nesto{position:relative;right:auto;top:auto;margin:40px auto 0;width:150px}}
 
 /* ── Prix ── */
 .pricing{display:grid;grid-template-columns:1fr 1.25fr;gap:20px;margin-top:56px;align-items:stretch}
@@ -454,21 +464,18 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 <section class="mission sec" id="mission">
   <div class="wrap" style="position:relative">
     <span class="eyebrow">Notre mission</span>
-    <p class="big-words" id="bigWords">À l'école, on t'apprend Pythagore. Personne ne t'explique les dividendes, le Livret A ou un ETF. CRESKO est né pour ça.</p>
+    <p class="big-words" id="bigWords">Personne ne t'a jamais expliqué les dividendes, le Livret A ou un ETF. CRESKO est né pour ça.</p>
     <img class="mission-nesto" src="img/apprenant.webp" alt="Nesto qui lit un livre">
-    <div class="pillars">
-      <div class="pillar" data-reveal>
-        <div class="ic" style="background:#1F5A36"><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+    <div class="bulbs" id="bulbs">
+      <div class="bulb">
         <h3>On ne te conseille jamais, on t'enseigne.</h3>
         <p>CRESKO ne te dit jamais quoi acheter. Il t'explique comment ça marche, pour que tu décides seul.</p>
       </div>
-      <div class="pillar" data-reveal>
-        <div class="ic" style="background:#5A4A12"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC94A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+      <div class="bulb">
         <h3>Indépendante et française.</h3>
         <p>CRESKO, c'est une toute petite équipe en France qui travaille dur pour que la bourse devienne enfin simple à comprendre.</p>
       </div>
-      <div class="pillar" data-reveal>
-        <div class="ic" style="background:#5B2A1A"><svg viewBox="0 0 24 24" fill="none" stroke="#F97C50" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg></div>
+      <div class="bulb">
         <h3>Fait pour toi.</h3>
         <p>Cinq minutes suffisent. Pas de cours magistral, pas de pavé à lire : du rythme, des mini-jeux et un chat qui te relance.</p>
       </div>
@@ -872,6 +879,16 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
   $('#finalNesto').addEventListener('click', function(){ coinRain(); });
 
   if (!hasGsap) return; // sans GSAP, la page reste lisible et statique
+
+  /* ── Mission : les trois phrases s'allument comme des ampoules ── */
+  if (!reduced){
+    $('#bulbs').classList.add('armed');
+    $$('#bulbs .bulb').forEach(function(b){
+      ScrollTrigger.create({trigger:b, start:'top 65%',
+        onEnter:function(){ b.classList.add('on'); },
+        onLeaveBack:function(){ b.classList.remove('on'); }});
+    });
+  }
 
   gsap.registerPlugin(ScrollTrigger);
 
