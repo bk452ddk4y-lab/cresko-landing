@@ -183,6 +183,7 @@ section{position:relative}
 /* ── Bento ── */
 .features{background:var(--bg)}
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:56px}
+.features .bento{margin-top:0} /* plus de titre au-dessus des cartes (4 oct.) */
 .tile{position:relative;border-radius:28px;padding:clamp(22px,2.6vw,34px);overflow:hidden;background:var(--card);border:1.5px solid #EFE4CB;box-shadow:0 6px 0 var(--edge)}
 .tile h3{font-size:clamp(28px,2.8vw,38px)}
 .tile p.d{margin-top:10px;color:var(--muted);font-size:16px;max-width:34rem}
@@ -510,11 +511,6 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 <!-- ═════════ FONCTIONNALITÉS ═════════ -->
 <section class="features sec" id="app">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <span class="eyebrow">Ce qu'il y a dedans</span>
-      <h2>Tout pour comprendre l'argent. Rien pour te le vendre.</h2>
-      <p>Un parcours complet, des histoires vraies, les vrais marchés et des mini-jeux. Tu progresses sans t'en rendre compte.</p>
-    </div>
 
     <div class="bento">
       <!-- Parcours -->
