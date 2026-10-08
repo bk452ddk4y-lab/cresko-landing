@@ -280,32 +280,58 @@ section{position:relative}
 .t-junior .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;max-width:62%}
 .t-junior .chips span{font-size:12px;font-weight:900;border-radius:8px;padding:4px 8px;background:var(--night-2);color:#D9E8D5}
 
-/* ── Junior (section pleine) ── */
-.junior{background:radial-gradient(900px 500px at 85% 20%, #2F5BD6 0%, rgba(47,91,214,0) 70%), linear-gradient(180deg,#1D3FB0,#132C80);color:#fff;overflow:hidden}
-.junior .eyebrow{color:var(--sun)}
-.jr-top{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.junior h2{font-size:clamp(52px,8vw,112px);color:#fff;margin-top:12px;text-shadow:0 5px 0 rgba(0,0,0,.18)}
-.junior .lead{margin-top:18px;font-size:clamp(17px,1.6vw,21px);color:#D8E2FF;max-width:34rem}
-.jr-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.jr-facts span{display:inline-flex;align-items:baseline;gap:6px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.18);border-radius:14px;padding:8px 14px;font-weight:800;font-size:15px;color:#E6ECFF}
-.jr-facts b{font-family:var(--display);font-size:24px;line-height:1;color:#fff}
-.jr-stage{position:relative;display:grid;place-items:center;min-height:360px}
-.jr-glow{position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, rgba(255,201,74,.35), rgba(255,201,74,0) 65%)}
-.jr-nesto{position:relative;width:clamp(200px,24vw,320px);filter:drop-shadow(0 20px 24px rgba(0,0,0,.3))}
-.jr-orbit{position:absolute;width:clamp(58px,6.5vw,86px)}
-.jr-chapters{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:70px}
-.jr-chap{background:var(--card);color:var(--ink);border-radius:22px;padding:20px 18px;box-shadow:0 6px 0 rgba(0,0,0,.25)}
-.jr-chap .n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;color:#fff;font-family:var(--display);font-weight:800;font-size:22px;padding-top:3px}
-.jr-chap h3{font-size:22px;margin-top:12px;line-height:1.08}
-.jr-chap ul{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px;font-size:14px;color:var(--muted)}
-.jr-chap li{display:flex;gap:8px;align-items:baseline}
-.jr-chap li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5;transform:translateY(-2px)}
-.jr-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(8px,2vw,26px);margin-top:64px}
-.jr-badges img{width:clamp(70px,11vw,130px);filter:drop-shadow(0 10px 14px rgba(0,0,0,.28))}
-.jr-cap{text-align:center;margin-top:18px;color:#C9D5FF;font-weight:800}
-@media (max-width:1000px){.jr-chapters{grid-template-columns:repeat(2,1fr)}.jr-chap:last-child{grid-column:span 2}}
-@media (max-width:820px){.jr-top{grid-template-columns:1fr}.jr-stage{min-height:300px}}
-@media (max-width:520px){.jr-chapters{grid-template-columns:1fr}.jr-chap:last-child{grid-column:auto}}
+/* ── Ligue du mois (8 oct. : remplace la grande section Junior) ── */
+.league{background:radial-gradient(800px 520px at 78% 30%, rgba(255,201,74,.22), rgba(255,201,74,0) 70%), linear-gradient(180deg,var(--night),#0A1F13);color:var(--cream-on-night);overflow:hidden}
+.league .eyebrow{color:var(--sun)}
+.lg-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.league h2{font-size:clamp(48px,7vw,96px);color:#FFF6DC;margin-top:12px;text-shadow:0 5px 0 rgba(0,0,0,.25)}
+.league .lead{margin-top:18px;font-size:clamp(17px,1.6vw,21px);color:#C9D8C6;max-width:32rem}
+.lg-facts{display:grid;gap:12px;margin-top:28px;max-width:30rem}
+.lg-facts div{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:16px;padding:12px 16px;font-weight:800;color:#E3EDDF}
+.lg-facts i{flex:none;width:12px;height:12px;border-radius:50%;background:var(--sun);box-shadow:0 0 12px rgba(255,201,74,.7)}
+.lg-clock{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:#FFF1C9;color:#5A3F00;border-radius:14px;padding:10px 16px;font-weight:900;box-shadow:0 4px 0 #C99418;font-variant-numeric:tabular-nums}
+.lg-clock b{font-family:var(--display);font-size:20px;line-height:1}
+/* le tableau */
+.lg-board{position:relative;background:linear-gradient(180deg,#FFFDF6,#F6EBD0);color:var(--ink);border-radius:30px;padding:clamp(18px,2.4vw,28px);box-shadow:0 10px 0 #C9B78C,0 30px 60px rgba(0,0,0,.35)}
+.lg-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#EADFC2;border-radius:16px;padding:5px}
+.lg-tabs button{font:inherit;font-weight:900;font-size:15px;border:0;border-radius:12px;padding:10px;background:transparent;color:var(--muted);cursor:pointer;transition:background .25s,color .25s,box-shadow .25s}
+.lg-tabs button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 3px 0 var(--edge)}
+.lg-stage{position:relative;margin-top:18px;border-radius:22px;padding:22px 12px 0;overflow:hidden;
+  background:radial-gradient(260px 200px at 50% 20%, rgba(255,220,120,.55), rgba(255,220,120,0) 70%), linear-gradient(180deg,#2B5C3B,#173B25)}
+.lg-rays{position:absolute;left:50%;top:-40%;width:640px;height:640px;margin-left:-320px;pointer-events:none;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg, rgba(255,230,150,.12) 0deg 8deg, rgba(255,230,150,0) 8deg 20deg);
+  -webkit-mask:radial-gradient(circle, #000 0%, transparent 60%);mask:radial-gradient(circle, #000 0%, transparent 60%)}
+.lg-podium{position:relative;display:grid;grid-template-columns:1fr 1.12fr 1fr;align-items:end;gap:8px}
+.lg-place{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
+.lg-av{width:clamp(44px,5vw,58px);height:clamp(44px,5vw,58px);border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.2vw,26px);color:#fff;border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.3);padding-top:3px}
+.lg-place.p1 .lg-av{width:clamp(56px,6.2vw,72px);height:clamp(56px,6.2vw,72px);border-color:#FFD45C;box-shadow:0 0 0 4px rgba(255,212,92,.35),0 6px 14px rgba(0,0,0,.35)}
+.lg-nm{margin-top:6px;font-weight:900;font-size:14px;color:#fff;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lg-nm.me{color:var(--sun)}
+.lg-pc{font-family:var(--display);font-weight:800;font-size:18px;color:#7EE29A;line-height:1.1}
+.lg-step{width:100%;margin-top:8px;border-radius:14px 14px 0 0;display:grid;place-items:start center;padding-top:10px;font-family:var(--display);font-weight:800;font-size:clamp(30px,3.4vw,42px);position:relative}
+.lg-step::after{content:"";position:absolute;left:10%;right:10%;top:6px;height:5px;border-radius:3px;background:rgba(255,255,255,.55)}
+.p1 .lg-step{height:clamp(110px,12vw,140px);background:linear-gradient(180deg,#FFE27A,#F2B526 55%,#C98A0C);color:#7A4E00;box-shadow:inset -8px 0 0 rgba(0,0,0,.08)}
+.p2 .lg-step{height:clamp(80px,9vw,104px);background:linear-gradient(180deg,#F4F6F8,#C3CBD3 55%,#8E99A4);color:#4A5560;box-shadow:inset -8px 0 0 rgba(0,0,0,.08)}
+.p3 .lg-step{height:clamp(60px,7vw,80px);background:linear-gradient(180deg,#F6C493,#D88A4E 55%,#A35E2A);color:#5E2E0B;box-shadow:inset -8px 0 0 rgba(0,0,0,.08)}
+.lg-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.lg-list li{display:grid;grid-template-columns:34px 36px 1fr auto;gap:10px;align-items:center;background:#fff;border:1.5px solid #EFE4CB;border-radius:14px;padding:8px 12px}
+.lg-list .r{font-family:var(--display);font-weight:800;font-size:20px;color:var(--muted);text-align:center}
+.lg-list .a{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:800;padding-top:2px}
+.lg-list .n{font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lg-list .v{font-family:var(--display);font-weight:800;font-size:18px;color:var(--green)}
+.lg-list li.me{background:#E4F1DC;border-color:#9FD39A;box-shadow:0 3px 0 #9FD39A}
+.lg-list li.me .n{color:var(--green-deep)}
+.lg-list li.gap{background:none;border:0;padding:0;display:block;text-align:center;color:var(--muted);letter-spacing:.3em;font-weight:900;line-height:1}
+.lg-nesto{position:absolute;right:-18px;top:-74px;width:clamp(90px,10vw,130px);filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));pointer-events:none}
+@media (max-width:900px){.lg-top{grid-template-columns:1fr}.lg-nesto{right:-6px;top:-64px}}
+
+/* ── Junior (simple évocation) ── */
+.jr-strip{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-top:clamp(56px,7vw,90px);background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:22px;padding:14px clamp(16px,2vw,22px)}
+.jr-strip img{flex:none;width:clamp(48px,5vw,62px)}
+.jr-strip p{margin:0;color:#C9D8C6;font-size:16px}
+.jr-strip b{color:#FFF6DC}
+.jr-strip .tag{flex:none;margin-left:auto;font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);border:1.5px solid rgba(255,201,74,.5);border-radius:999px;padding:5px 12px}
+@media (max-width:620px){.jr-strip{flex-wrap:wrap}.jr-strip .tag{margin-left:0}}
 
 /* ── Mission ── */
 .mission{background:var(--night);color:var(--cream-on-night);overflow:hidden}
@@ -313,9 +339,9 @@ section{position:relative}
 .big-words{font-family:var(--display);font-weight:800;font-size:clamp(34px, 5.2vw, 72px);line-height:1.08;margin-top:18px;max-width:22ch;text-wrap:balance}
 .big-words .w{color:rgba(246,237,214,.2);transition:color .2s}
 .big-words .w.hl{color:var(--sun)}
-.bulbs{display:grid;gap:clamp(56px,8vw,110px);margin-top:clamp(70px,9vw,120px)}
-.bulb h3{font-size:clamp(34px,5vw,68px);line-height:1.05;max-width:18ch;color:#FFF6DC;text-shadow:0 0 22px rgba(255,201,74,.3)}
-.bulb p{margin-top:16px;font-size:clamp(17px,1.5vw,20px);color:#C9D8C6;max-width:34rem}
+.bulbs{display:grid;gap:clamp(56px,8vw,110px);margin-top:clamp(70px,9vw,120px);text-align:center;justify-items:center}
+.bulb h3{font-size:clamp(34px,5vw,68px);line-height:1.05;max-width:20ch;margin-inline:auto;color:#FFF6DC;text-shadow:0 0 22px rgba(255,201,74,.3)}
+.bulb p{margin:16px auto 0;font-size:clamp(17px,1.5vw,20px);color:#C9D8C6;max-width:34rem}
 /* Ampoules (4 oct.) : chaque phrase s'allume D'UN COUP quand on arrive dessus — petit grésillement,
    éclat, puis lumière stable. Sans JS / mouvement réduit : tout est allumé d'office. */
 .bulbs.armed .bulb h3{color:rgba(246,237,214,.13);text-shadow:none}
@@ -407,7 +433,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
       <a href="#mission">Mission</a>
       <a href="#lecon">Une leçon</a>
       <a href="#app">L'app</a>
-      <a href="#junior">Junior</a>
+      <a href="#ligue">Ligue</a>
       <a href="#prix">Prix</a>
       <a href="#faq">Questions</a>
     </nav>
@@ -459,16 +485,16 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     <img class="mission-nesto" src="img/apprenant.webp" alt="Nesto qui lit un livre">
     <div class="bulbs" id="bulbs">
       <div class="bulb">
+        <h3>Fait pour toi.</h3>
+        <p>Cinq minutes suffisent. Pas de cours magistral, pas de pavé à lire : du rythme, des mini-jeux et un chat qui te relance.</p>
+      </div>
+      <div class="bulb">
         <h3>On ne te conseille jamais, on t'enseigne.</h3>
         <p>CRESKO ne te dit jamais quoi acheter. Il t'explique comment ça marche, pour que tu décides seul.</p>
       </div>
       <div class="bulb">
         <h3>Indépendante et française.</h3>
         <p>CRESKO, c'est une toute petite équipe en France qui travaille dur pour que la bourse devienne enfin simple à comprendre.</p>
-      </div>
-      <div class="bulb">
-        <h3>Fait pour toi.</h3>
-        <p>Cinq minutes suffisent. Pas de cours magistral, pas de pavé à lire : du rythme, des mini-jeux et un chat qui te relance.</p>
       </div>
     </div>
   </div>
@@ -605,35 +631,41 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
   </div>
 </section>
 
-<!-- ═════════ MODE JUNIOR ═════════ -->
-<section class="junior sec" id="junior">
+<!-- ═════════ LIGUE DU MOIS ═════════ -->
+<section class="league sec" id="ligue">
   <div class="wrap">
-    <div class="jr-top">
+    <div class="lg-top">
       <div>
-        <span class="eyebrow">Mode Junior · 10-15 ans</span>
-        <h2>Mes premiers sous.</h2>
-        <p class="lead">Un parcours à part pour les 10-15 ans : l'argent de poche, les achats en ligne, les skins, les arnaques qui visent les plus jeunes. Des mots simples, des leçons courtes, et Nesto toujours là.</p>
-        <div class="jr-facts"><span><b>18</b>leçons</span><span><b>5</b>chapitres</span><span><b>6</b>insignes à gagner</span></div>
+        <span class="eyebrow">La ligue du mois</span>
+        <h2>Grimpe au classement.</h2>
+        <p class="lead">Chaque mois, le portefeuille virtuel qui grimpe le plus prend la tête. Toute la France d'un côté, tes amis de l'autre, et le podium se rejoue le mois suivant.</p>
+        <div class="lg-facts">
+          <div><i></i>Un nouveau classement chaque mois</div>
+          <div><i></i>France ou entre amis, ton rang dans les deux</div>
+          <div><i></i>Les champions du mois gardent leur place au palmarès</div>
+        </div>
+        <span class="lg-clock" id="lgClock" hidden>Fin du mois dans <b id="lgLeft"></b></span>
       </div>
-      <div class="jr-stage" id="jrStage">
-        <div class="jr-glow"></div>
-        <img class="jr-orbit" src="img/jr1.webp" alt="" style="left:6%;top:12%">
-        <img class="jr-orbit" src="img/jr4.webp" alt="" style="right:4%;top:6%">
-        <img class="jr-orbit" src="img/jr6.webp" alt="" style="right:8%;bottom:8%">
-        <img class="jr-nesto" src="img/medaille.webp" alt="Nesto avec une médaille">
+
+      <div class="lg-board" id="lgBoard">
+        <img class="lg-nesto" src="img/medaille.webp" alt="">
+        <div class="lg-tabs" role="tablist" aria-label="Classement">
+          <button type="button" role="tab" aria-selected="true" data-scope="fr">France</button>
+          <button type="button" role="tab" aria-selected="false" data-scope="amis">Entre amis</button>
+        </div>
+        <div class="lg-stage">
+          <div class="lg-rays" aria-hidden="true"></div>
+          <div class="lg-podium" id="lgPodium"></div>
+        </div>
+        <ol class="lg-list" id="lgList"></ol>
       </div>
     </div>
-    <div class="jr-chapters" id="jrChapters">
-        <div class="jr-chap"><span class="n" style="background:#16a34a">1</span><h3>L'argent, c'est quoi</h3><ul><li>Pourquoi l'argent existe</li><li>Ton argent, il est où ?</li><li>Argent de poche et cadeaux</li></ul></div>
-        <div class="jr-chap"><span class="n" style="background:#2E86C1">2</span><h3>Acheter malin</h3><ul><li>Envie ou besoin ?</li><li>Attendre</li><li>Comparer</li><li>Payer sans y penser</li></ul></div>
-        <div class="jr-chap"><span class="n" style="background:#DB5F35">3</span><h3>Garder ce que tu as</h3><ul><li>Mettre de côté sans souffrir</li><li>Lire ton compte</li><li>Ce qui part tout seul</li></ul></div>
-        <div class="jr-chap"><span class="n" style="background:#E3A81C">4</span><h3>Ne pas se faire avoir</h3><ul><li>Gratuit, vraiment ?</li><li>V-Bucks, skins et passes</li><li>Les arnaques en ligne</li><li>Entre particuliers et entre potes</li></ul></div>
-        <div class="jr-chap"><span class="n" style="background:#8B5CC9">5</span><h3>Gagner et tenir</h3><ul><li>Gagner de l'argent avant 18 ans</li><li>Brut et net</li><li>L'inflation, expliquée par le pain</li><li>Faire durer un mois</li></ul></div>
+
+    <div class="jr-strip">
+      <img src="img/jr1.webp" alt="">
+      <p><b>Et pour les 10-15 ans, le mode Junior.</b> « Mes premiers sous » : l'argent de poche, les achats en ligne, les arnaques, en 18 leçons courtes.</p>
+      <span class="tag">10-15 ans</span>
     </div>
-    <div class="jr-badges" id="jrBadges">
-      <img src="img/jr1.webp" alt="Insigne bronze"><img src="img/jr2.webp" alt="Insigne argent"><img src="img/jr3.webp" alt="Insigne argent"><img src="img/jr4.webp" alt="Insigne argent"><img src="img/jr5.webp" alt="Insigne or"><img src="img/jr6.webp" alt="Insigne or">
-    </div>
-    <p class="jr-cap">Du bronze à l'or : sa propre progression, ses propres insignes.</p>
   </div>
 </section>
 
@@ -715,7 +747,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
       <p style="margin-top:10px;max-width:22rem">L'app qui t'apprend à investir en t'amusant.</p>
     </div>
     <nav aria-label="Pied de page">
-      <a href="#mission">Mission</a><a href="#lecon">Une leçon</a><a href="#app">L'app</a><a href="#junior">Junior</a><a href="#prix">Prix</a><a href="#faq">Questions</a>
+      <a href="#mission">Mission</a><a href="#lecon">Une leçon</a><a href="#app">L'app</a><a href="#ligue">Ligue</a><a href="#prix">Prix</a><a href="#faq">Questions</a>
       <a href="https://bk452ddk4y-lab.github.io/cresko-site-conditions/privacy.html" target="_blank" rel="noopener">Confidentialité</a><a href="https://bk452ddk4y-lab.github.io/cresko-site-conditions/terms.html" target="_blank" rel="noopener">Conditions d'utilisation</a><a href="https://bk452ddk4y-lab.github.io/cresko-site-conditions/support.html" target="_blank" rel="noopener">Support</a>
     </nav>
     <p class="legal">© 2026 CRESKO. Contenu pédagogique. Investir comporte un risque de perte en capital.</p>
@@ -855,6 +887,45 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     if (hasGsap && !reduced){ gsap.timeline().to(nestoHero.firstElementChild,{y:-60,scaleY:1.05,duration:.25,ease:'power2.out'}).to(nestoHero.firstElementChild,{y:0,scaleY:1,duration:.6,ease:'bounce.out'}); }
   });
   $('#finalNesto').addEventListener('click', function(){ coinRain(); });
+
+  /* ── Ligue du mois : remplissage + onglets + compte à rebours ── */
+  var LG = {
+    fr:  {podium:[['Inès','#8B5CC9','+18,4 %'],['Hugo','#2E86C1','+14,9 %'],['Maëlle','#DB5F35','+12,1 %']],
+          list:[[4,'Yanis','#1A9A8E','+10,7 %'],[5,'Clara','#E3A81C','+9,8 %'],['gap'],[38,'Toi','#16a34a','+6,2 %',1]]},
+    amis:{podium:[['Léo','#DB5F35','+9,1 %'],['Toi','#16a34a','+6,2 %',1],['Sarah','#2E86C1','+4,4 %']],
+          list:[[4,'Nathan','#8B5CC9','+3,0 %'],[5,'Emma','#1A9A8E','+1,7 %']]}
+  };
+  function lgRender(k){
+    var d = LG[k], order = [1,0,2], cls = ['p1','p2','p3'];
+    $('#lgPodium').innerHTML = order.map(function(i){
+      var p = d.podium[i];
+      return '<div class="lg-place '+cls[i]+'"><span class="lg-av" style="background:'+p[1]+'">'+p[0][0]+'</span><span class="lg-nm">'+p[0]+'</span><span class="lg-pc">'+p[2]+'</span><span class="lg-step">'+(i+1)+'</span></div>';
+    }).join('');
+    $('#lgList').innerHTML = d.list.map(function(r){
+      if (r[0]==='gap') return '<li class="gap" aria-hidden="true">• • •</li>';
+      return '<li'+(r[4]?' class="me"':'')+'><span class="r">'+r[0]+'</span><span class="a" style="background:'+r[2]+'">'+r[1][0]+'</span><span class="n">'+r[1]+'</span><span class="v">'+r[3]+'</span></li>';
+    }).join('');
+  }
+  lgRender('fr');
+  $$('.lg-tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      $$('.lg-tabs button').forEach(function(x){ x.setAttribute('aria-selected', x===b ? 'true':'false'); });
+      lgRender(b.dataset.scope);
+      if (hasGsap && !reduced){
+        gsap.from('#lgPodium .lg-step',{scaleY:0, transformOrigin:'50% 100%', duration:.6, stagger:{each:.1, from:'end'}, ease:'back.out(1.6)'});
+        gsap.from('#lgPodium .lg-av',{y:-30, opacity:0, duration:.5, delay:.3, stagger:.08, ease:'bounce.out'});
+        gsap.from('#lgList li',{x:30, opacity:0, duration:.4, stagger:.06, ease:'power2.out'});
+      }
+    });
+  });
+  (function(){
+    function tick(){
+      var now = new Date(), end = new Date(now.getFullYear(), now.getMonth()+1, 1), ms = end - now;
+      var d = Math.floor(ms/864e5), h = Math.floor(ms/36e5)%24, m = Math.floor(ms/6e4)%60;
+      $('#lgLeft').textContent = d+' j '+h+' h '+(m<10?'0':'')+m+' min';
+    }
+    tick(); $('#lgClock').hidden = false; setInterval(tick, 30000);
+  })();
 
   if (!hasGsap) return; // sans GSAP, la page reste lisible et statique
 
@@ -1034,16 +1105,12 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     .to(sc,{n:30, duration:1.6, ease:'power2.out', onUpdate:function(){ $('#streakN').textContent = Math.round(sc.n); }})
     .from('#cups img',{y:40, scale:.3, opacity:0, stagger:.12, duration:.6, ease:'back.out(2.5)'}, .3);
 
-  /* ── Junior ── */
+  /* ── Ligue du mois : podium animé à l'arrivée ── */
   if (!reduced){
-    gsap.from('#jrChapters .jr-chap',{y:70, opacity:0, duration:.8, stagger:.1, ease:'back.out(1.6)', scrollTrigger:{trigger:'#jrChapters', start:'top 85%', once:true}});
-    gsap.from('#jrBadges img',{scale:0, rotationY:180, opacity:0, duration:.9, stagger:.12, ease:'back.out(2)', scrollTrigger:{trigger:'#jrBadges', start:'top 88%', once:true}});
-    gsap.from('.jr-nesto',{y:140, scale:.7, opacity:0, duration:1.1, ease:'elastic.out(1,.55)', scrollTrigger:{trigger:'#jrStage', start:'top 75%', once:true}});
-    $$('.jr-orbit').forEach(function(o,i){
-      gsap.from(o,{scale:0, opacity:0, duration:.7, delay:.4+i*.15, ease:'back.out(2.5)', scrollTrigger:{trigger:'#jrStage', start:'top 75%', once:true}});
-      gsap.to(o,{y:(i%2?-1:1)*14, duration:2+i*.4, repeat:-1, yoyo:true, ease:'sine.inOut'});
-    });
-    gsap.to('.jr-glow',{scale:1.12, duration:2.4, repeat:-1, yoyo:true, ease:'sine.inOut'});
+    gsap.from('#lgPodium .lg-step',{scaleY:0, transformOrigin:'50% 100%', duration:.8, stagger:{each:.15, from:'end'}, ease:'back.out(1.6)', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
+    gsap.from('#lgPodium .lg-av',{y:-40, opacity:0, duration:.7, delay:.5, stagger:.12, ease:'bounce.out', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
+    gsap.from('#lgList li',{x:40, opacity:0, duration:.5, delay:.8, stagger:.08, ease:'power2.out', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
+    gsap.from('.lg-nesto',{y:60, rotation:-12, opacity:0, duration:1, delay:.3, ease:'elastic.out(1,.6)', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
   }
 
   /* ── Mission : les mots s'allument au scroll ── */
