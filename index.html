@@ -113,7 +113,13 @@ a{color:inherit}
 .chip .co{color:var(--coral-deep)}
 .chip .gr{color:var(--green)}
 .hill{position:relative;z-index:4;margin-top:-70px;background:linear-gradient(180deg,var(--green) 0%, var(--green-dark) 100%);
-  border-radius:50% 50% 0 0 / 90px 90px 0 0;padding:92px var(--gutter) 64px;color:#fff;text-align:center}
+  --hr:90px;border-radius:50% 50% 0 0 / var(--hr) var(--hr) 0 0;padding:92px var(--gutter) 64px;color:#fff;text-align:center;
+  min-height:100vh;min-height:100svh}
+/* 13 oct. : le haut de page reste en place et le bloc vert monte par-dessus jusqu'à remplir l'écran */
+@supports (overflow:clip){
+  .hero{overflow:clip}
+  .stage{position:sticky;top:calc(86px + env(safe-area-inset-top,0px))}
+}
 .hill h1{font-size:clamp(38px, 6vw, 74px);color:#fff;max-width:16ch;margin-inline:auto;text-shadow:0 3px 0 rgba(0,0,0,.12)}
 .hill p.lead{max-width:34rem;margin:18px auto 0;font-size:clamp(17px,1.6vw,20px);color:#EAF7E4;font-weight:700}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
@@ -280,7 +286,7 @@ section{position:relative}
 .t-junior .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;max-width:62%}
 .t-junior .chips span{font-size:12px;font-weight:900;border-radius:8px;padding:4px 8px;background:var(--night-2);color:#D9E8D5}
 
-/* ── Ligue du mois (8 oct. : remplace la grande section Junior) ── */
+/* ── Ligue par coupes (13 oct. : remplace la ligue du mois) ── */
 .league{background:radial-gradient(800px 520px at 78% 30%, rgba(255,201,74,.22), rgba(255,201,74,0) 70%), linear-gradient(180deg,var(--night),#0A1F13);color:var(--cream-on-night);overflow:hidden}
 .league .eyebrow{color:var(--sun)}
 .lg-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
@@ -323,7 +329,32 @@ section{position:relative}
 .lg-list li.me .n{color:var(--green-deep)}
 .lg-list li.gap{background:none;border:0;padding:0;display:block;text-align:center;color:var(--muted);letter-spacing:.3em;font-weight:900;line-height:1}
 .lg-nesto{position:absolute;right:-18px;top:-74px;width:clamp(90px,10vw,130px);filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));pointer-events:none}
+.lg-head{display:flex;align-items:center;gap:10px;margin-top:16px;padding-inline:4px}
+.lg-head img{width:36px;height:auto}
+.lg-head b{font-family:var(--display);font-weight:800;font-size:20px;line-height:1}
+.lg-head span{margin-left:auto;font-size:13px;font-weight:900;color:var(--muted);background:#EADFC2;border-radius:10px;padding:6px 10px;white-space:nowrap}
+.lg-cup{width:24px;height:auto;margin-top:3px}
+.lg-list .n img{flex:none;width:20px;height:auto;margin-left:8px}
+.lg-list .n:has(img){display:flex;align-items:center}
+.lg-list li.cut{background:none;border:0;border-top:2px dashed #9FD39A;border-radius:0;padding:7px 0 0;display:block;text-align:center;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--green-deep)}
+.lg-list li.out .v{color:var(--muted)}
+.lg-list li.out{opacity:.75}
 @media (max-width:900px){.lg-top{grid-template-columns:1fr}.lg-nesto{right:-6px;top:-64px}}
+/* l'étagère des huit coupes */
+.lg-ladder{margin-top:clamp(56px,7vw,90px);text-align:center}
+.lg-ladder h3{font-size:clamp(26px,3vw,38px);color:#FFF6DC}
+.lg-ladder > p{margin:10px auto 0;max-width:36rem;color:#C9D8C6;font-weight:700}
+.lg-shelf{position:relative;display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(6px,1.4vw,18px);align-items:end;margin-top:28px;padding:0 10px}
+.lg-shelf::after{content:"";position:absolute;left:0;right:0;bottom:20px;height:14px;border-radius:8px;background:linear-gradient(180deg,#6B5634,#3F311C);box-shadow:0 6px 0 rgba(0,0,0,.28)}
+.lg-shelf figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px}
+.lg-shelf img{width:var(--w,70%);height:auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+.lg-shelf figcaption{font-weight:900;font-size:clamp(11px,1.1vw,14px);color:#E3EDDF;line-height:18px}
+.lg-shelf .top figcaption{color:var(--sun)}
+@media (max-width:640px){
+  .lg-shelf{grid-template-columns:repeat(4,1fr);row-gap:22px}
+  .lg-shelf::after{display:none}
+  .lg-shelf img{border-bottom:10px solid #4F3F26;border-radius:0 0 6px 6px}
+}
 
 /* ── Junior (simple évocation) ── */
 .jr-strip{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-top:clamp(56px,7vw,90px);background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:22px;padding:14px clamp(16px,2vw,22px)}
@@ -613,7 +644,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
           <span class="n" id="streakN">30</span><span class="u">jours<br>de série</span>
         </div>
         <div class="cups" id="cups"><img src="img/paw-bronze.webp" alt="Trophée bronze"><img src="img/paw-argent.webp" alt="Trophée argent"><img src="img/paw-or.webp" alt="Trophée or"><img src="img/paw-diamant.webp" alt="Trophée diamant"></div>
-        <p class="d" style="font-size:15px">Missions du jour, coffres, ligue du mois entre amis.</p>
+        <p class="d" style="font-size:15px">Missions du jour, coffres, et la Ligue chaque semaine.</p>
       </article>
 
       <!-- Journal -->
@@ -631,33 +662,49 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
   </div>
 </section>
 
-<!-- ═════════ LIGUE DU MOIS ═════════ -->
+<!-- ═════════ LIGUE PAR COUPES ═════════ -->
 <section class="league sec" id="ligue">
   <div class="wrap">
     <div class="lg-top">
       <div>
-        <span class="eyebrow">La ligue du mois</span>
-        <h2>Grimpe au classement.</h2>
-        <p class="lead">Chaque mois, le portefeuille virtuel qui grimpe le plus prend la tête. Toute la France d'un côté, tes amis de l'autre, et le podium se rejoue le mois suivant.</p>
+        <span class="eyebrow">La Ligue</span>
+        <h2>Monte de coupe en coupe.</h2>
+        <p class="lead">Chaque semaine, ton portefeuille virtuel affronte ceux de ton salon. Les meilleurs montent à la coupe du dessus, les autres redescendent d'une marche. Huit coupes, du Plastique jusqu'au Champion.</p>
         <div class="lg-facts">
-          <div><i></i>Un nouveau classement chaque mois</div>
-          <div><i></i>France ou entre amis, ton rang dans les deux</div>
-          <div><i></i>Les champions du mois gardent leur place au palmarès</div>
+          <div><i></i>Une manche par semaine, résultats le dimanche à 19 h</div>
+          <div><i></i>Classé sur ce que ton portefeuille gagne dans la semaine</div>
+          <div><i></i>Entre amis, le classement du mois et la coupe de chacun</div>
         </div>
-        <span class="lg-clock" id="lgClock" hidden>Fin du mois dans <b id="lgLeft"></b></span>
+        <span class="lg-clock" id="lgClock" hidden><span id="lgLabel">Fin de la manche dans</span> <b id="lgLeft"></b></span>
       </div>
 
       <div class="lg-board" id="lgBoard">
         <img class="lg-nesto" src="img/medaille.webp" alt="">
         <div class="lg-tabs" role="tablist" aria-label="Classement">
-          <button type="button" role="tab" aria-selected="true" data-scope="fr">France</button>
+          <button type="button" role="tab" aria-selected="true" data-scope="salon">Mon salon</button>
           <button type="button" role="tab" aria-selected="false" data-scope="amis">Entre amis</button>
         </div>
+        <div class="lg-head" id="lgHead"></div>
         <div class="lg-stage">
           <div class="lg-rays" aria-hidden="true"></div>
           <div class="lg-podium" id="lgPodium"></div>
         </div>
         <ol class="lg-list" id="lgList"></ol>
+      </div>
+    </div>
+
+    <div class="lg-ladder">
+      <h3>Huit coupes à gravir.</h3>
+      <p>Chaque dimanche, tu montes ou tu redescends. Les 10 meilleurs Champions du mois entrent au Mur des champions.</p>
+      <div class="lg-shelf" id="lgShelf">
+        <figure style="--w:54%"><img src="img/cup-plastique.webp" alt="" loading="lazy"><figcaption>Plastique</figcaption></figure>
+        <figure style="--w:58%"><img src="img/cup-marbre.webp" alt="" loading="lazy"><figcaption>Marbre</figcaption></figure>
+        <figure style="--w:62%"><img src="img/cup-bronze.webp" alt="" loading="lazy"><figcaption>Bronze</figcaption></figure>
+        <figure style="--w:66%"><img src="img/cup-argent.webp" alt="" loading="lazy"><figcaption>Argent</figcaption></figure>
+        <figure style="--w:70%"><img src="img/cup-or.webp" alt="" loading="lazy"><figcaption>Or</figcaption></figure>
+        <figure style="--w:76%"><img src="img/cup-epique.webp" alt="" loading="lazy"><figcaption>Épique</figcaption></figure>
+        <figure style="--w:82%"><img src="img/cup-diamant.webp" alt="" loading="lazy"><figcaption>Diamant</figcaption></figure>
+        <figure class="top" style="--w:92%"><img src="img/cup-champion.webp" alt="" loading="lazy"><figcaption>Champion</figcaption></figure>
       </div>
     </div>
 
@@ -705,7 +752,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>9 leçons exclusives</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>4 leçons bonus</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le portefeuille virtuel</li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La ligue du mois</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La Ligue et ses huit coupes</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les gels de série</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le Bilan final</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La révision du Dico chaque jour</li>
@@ -888,25 +935,31 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
   });
   $('#finalNesto').addEventListener('click', function(){ coinRain(); });
 
-  /* ── Ligue du mois : remplissage + onglets + compte à rebours ── */
+  /* ── Ligue par coupes : remplissage + onglets + compte à rebours ── */
+  // salon : perf de la SEMAINE, 15 joueurs, les 10 premiers montent ; amis : perf du MOIS + coupe de chacun
+  var CUP = function(t){ return '<img src="img/cup-'+t+'.webp" alt="">'; };
   var LG = {
-    fr:  {podium:[['Inès','#8B5CC9','+18,4 %'],['Hugo','#2E86C1','+14,9 %'],['Maëlle','#DB5F35','+12,1 %']],
-          list:[[4,'Yanis','#1A9A8E','+10,7 %'],[5,'Clara','#E3A81C','+9,8 %'],['gap'],[38,'Toi','#16a34a','+6,2 %',1]]},
-    amis:{podium:[['Léo','#DB5F35','+9,1 %'],['Toi','#16a34a','+6,2 %',1],['Sarah','#2E86C1','+4,4 %']],
-          list:[[4,'Nathan','#8B5CC9','+3,0 %'],[5,'Emma','#1A9A8E','+1,7 %']]}
+    salon:{head:CUP('or')+'<b>Coupe Or</b><span>Classé sur la semaine</span>',
+          podium:[['Inès','#8B5CC9','+6,84 %'],['Hugo','#2E86C1','+5,21 %'],['Maëlle','#DB5F35','+4,90 %']],
+          list:[[4,'Yanis','#1A9A8E','+4,12 %'],[5,'Clara','#E3A81C','+3,65 %'],['gap'],[9,'Toi','#16a34a','+2,31 %','me'],[10,'Emma','#D9573B','+1,94 %'],['cut','Ligne de montée vers l\'Épique'],[11,'Lucas','#2E86C1','+1,72 %','out']]},
+    amis:{head:'<b>Entre amis</b><span>Classé sur le mois</span>',
+          podium:[['Léo','#DB5F35','+9,1 %',0,'diamant'],['Toi','#16a34a','+6,2 %',1,'or'],['Sarah','#2E86C1','+4,4 %',0,'argent']],
+          list:[[4,'Nathan','#8B5CC9','+3,0 %',0,'bronze'],[5,'Emma','#1A9A8E','+1,7 %',0,'marbre']]}
   };
   function lgRender(k){
     var d = LG[k], order = [1,0,2], cls = ['p1','p2','p3'];
+    $('#lgHead').innerHTML = d.head;
     $('#lgPodium').innerHTML = order.map(function(i){
       var p = d.podium[i];
-      return '<div class="lg-place '+cls[i]+'"><span class="lg-av" style="background:'+p[1]+'">'+p[0][0]+'</span><span class="lg-nm">'+p[0]+'</span><span class="lg-pc">'+p[2]+'</span><span class="lg-step">'+(i+1)+'</span></div>';
+      return '<div class="lg-place '+cls[i]+'"><span class="lg-av" style="background:'+p[1]+'">'+p[0][0]+'</span><span class="lg-nm'+(p[3]?' me':'')+'">'+p[0]+'</span>'+(p[4]?'<img class="lg-cup" src="img/cup-'+p[4]+'.webp" alt="Coupe '+p[4]+'">':'')+'<span class="lg-pc">'+p[2]+'</span><span class="lg-step">'+(i+1)+'</span></div>';
     }).join('');
     $('#lgList').innerHTML = d.list.map(function(r){
       if (r[0]==='gap') return '<li class="gap" aria-hidden="true">• • •</li>';
-      return '<li'+(r[4]?' class="me"':'')+'><span class="r">'+r[0]+'</span><span class="a" style="background:'+r[2]+'">'+r[1][0]+'</span><span class="n">'+r[1]+'</span><span class="v">'+r[3]+'</span></li>';
+      if (r[0]==='cut') return '<li class="cut">'+r[1]+'</li>';
+      return '<li'+(r[4]?' class="'+r[4]+'"':'')+'><span class="r">'+r[0]+'</span><span class="a" style="background:'+r[2]+'">'+r[1][0]+'</span><span class="n">'+r[1]+(r[5]?'<img src="img/cup-'+r[5]+'.webp" alt="Coupe '+r[5]+'">':'')+'</span><span class="v">'+r[3]+'</span></li>';
     }).join('');
   }
-  lgRender('fr');
+  lgRender('salon');
   $$('.lg-tabs button').forEach(function(b){
     b.addEventListener('click', function(){
       $$('.lg-tabs button').forEach(function(x){ x.setAttribute('aria-selected', x===b ? 'true':'false'); });
@@ -919,10 +972,17 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     });
   });
   (function(){
+    // la manche ferme le dimanche à 19 h (heure de Paris) et reprend le lundi à 8 h
+    var fmt; try { fmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris', weekday:'short', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}); } catch(e){ return; }
+    var DAYS = {Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6};
     function tick(){
-      var now = new Date(), end = new Date(now.getFullYear(), now.getMonth()+1, 1), ms = end - now;
-      var d = Math.floor(ms/864e5), h = Math.floor(ms/36e5)%24, m = Math.floor(ms/6e4)%60;
-      $('#lgLeft').textContent = d+' j '+h+' h '+(m<10?'0':'')+m+' min';
+      var parts = {}; fmt.formatToParts(new Date()).forEach(function(x){ parts[x.type] = x.value; });
+      var now = DAYS[parts.weekday]*1440 + (+parts.hour)*60 + (+parts.minute);
+      var left = 6*1440 + 19*60 - now;
+      if (left <= 0){ $('#lgLabel').textContent = 'Nouvelle manche'; $('#lgLeft').textContent = 'lundi à 8 h'; return; }
+      $('#lgLabel').textContent = 'Fin de la manche dans';
+      var d = Math.floor(left/1440), h = Math.floor(left/60)%24, m = left%60;
+      $('#lgLeft').textContent = (d ? d+' j ' : '')+h+' h '+(m<10?'0':'')+m+' min';
     }
     tick(); $('#lgClock').hidden = false; setInterval(tick, 30000);
   })();
@@ -994,11 +1054,13 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     }
 
     // au scroll : les lettres s'écartent, Nesto s'élève, les objets s'envolent
-    var heroTl = gsap.timeline({scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:.6}});
+    var heroTl = gsap.timeline({scrollTrigger:{trigger:'.hill', start:0, end:'top top', scrub:.6}});
     // le mot reste entier : il descend plus lentement que la page (parallaxe) et s'efface, Nesto monte devant
     heroTl.to('#wordmark',{yPercent:45, scale:.9, opacity:0, ease:'none'}, 0);
     heroTl.to('#nestoHero',{yPercent:-22, ease:'none'}, 0);
     floats.forEach(function(f){ heroTl.to(f.firstElementChild,{yPercent:(+f.dataset.speed)*420, ease:'none'}, 0); });
+    // le bloc vert s'aplatit en montant, pour remplir tout l'écran une fois en haut
+    gsap.fromTo('.hill',{'--hr':'90px'},{'--hr':'0px', ease:'none', scrollTrigger:{trigger:'.hill', start:0, end:'top top', scrub:true}});
   }
 
   /* ── Ticker : vitesse liée au scroll ── */
@@ -1105,12 +1167,13 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     .to(sc,{n:30, duration:1.6, ease:'power2.out', onUpdate:function(){ $('#streakN').textContent = Math.round(sc.n); }})
     .from('#cups img',{y:40, scale:.3, opacity:0, stagger:.12, duration:.6, ease:'back.out(2.5)'}, .3);
 
-  /* ── Ligue du mois : podium animé à l'arrivée ── */
+  /* ── Ligue : podium et étagère animés à l'arrivée ── */
   if (!reduced){
     gsap.from('#lgPodium .lg-step',{scaleY:0, transformOrigin:'50% 100%', duration:.8, stagger:{each:.15, from:'end'}, ease:'back.out(1.6)', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
     gsap.from('#lgPodium .lg-av',{y:-40, opacity:0, duration:.7, delay:.5, stagger:.12, ease:'bounce.out', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
     gsap.from('#lgList li',{x:40, opacity:0, duration:.5, delay:.8, stagger:.08, ease:'power2.out', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
     gsap.from('.lg-nesto',{y:60, rotation:-12, opacity:0, duration:1, delay:.3, ease:'elastic.out(1,.6)', scrollTrigger:{trigger:'#lgBoard', start:'top 75%', once:true}});
+    gsap.from('#lgShelf img',{y:40, opacity:0, duration:.6, stagger:.08, ease:'back.out(1.8)', scrollTrigger:{trigger:'#lgShelf', start:'top 85%', once:true}});
   }
 
   /* ── Mission : les mots s'allument au scroll ── */
