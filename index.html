@@ -206,9 +206,6 @@ section{position:relative}
 .t-streak .kicker{color:var(--coral-deep)}
 .t-news{grid-column:span 2;background:#FBE3E8;border-color:#F4CDD6;box-shadow:0 6px 0 #EDBCC8}
 .t-news .kicker{color:var(--cherry)}
-.t-junior{grid-column:span 3;background:var(--night);border-color:var(--night);box-shadow:0 6px 0 #061309;color:var(--cream-on-night)}
-.t-junior .kicker{color:var(--sun)}
-.t-junior p.d{color:#B9CBB9}
 @media (max-width:1000px){.t-quiz,.t-market,.t-legend{grid-column:span 6}.t-streak,.t-news{grid-column:span 3}}
 @media (max-width:640px){.bento>.tile{grid-column:span 6}}
 
@@ -281,10 +278,6 @@ section{position:relative}
 .prono .m{background:var(--green);box-shadow:0 3px 0 var(--green-dark)}
 .prono .b{background:var(--coral);box-shadow:0 3px 0 var(--coral-deep)}
 
-/* junior */
-.junior-n{position:absolute;right:-8px;bottom:-10px;width:44%;max-width:170px}
-.t-junior .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;max-width:62%}
-.t-junior .chips span{font-size:12px;font-weight:900;border-radius:8px;padding:4px 8px;background:var(--night-2);color:#D9E8D5}
 
 /* ── Ligue par coupes (13 oct. : remplace la ligue du mois) ── */
 .league{background:radial-gradient(800px 520px at 78% 30%, rgba(255,201,74,.22), rgba(255,201,74,0) 70%), linear-gradient(180deg,var(--night),#0A1F13);color:var(--cream-on-night);overflow:hidden}
@@ -356,13 +349,6 @@ section{position:relative}
   .lg-shelf img{border-bottom:10px solid #4F3F26;border-radius:0 0 6px 6px}
 }
 
-/* ── Junior (simple évocation) ── */
-.jr-strip{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-top:clamp(56px,7vw,90px);background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:22px;padding:14px clamp(16px,2vw,22px)}
-.jr-strip img{flex:none;width:clamp(48px,5vw,62px)}
-.jr-strip p{margin:0;color:#C9D8C6;font-size:16px}
-.jr-strip b{color:#FFF6DC}
-.jr-strip .tag{flex:none;margin-left:auto;font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);border:1.5px solid rgba(255,201,74,.5);border-radius:999px;padding:5px 12px}
-@media (max-width:620px){.jr-strip{flex-wrap:wrap}.jr-strip .tag{margin-left:0}}
 
 /* ── Mission ── */
 .mission{background:var(--night);color:var(--cream-on-night);overflow:hidden}
@@ -572,7 +558,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
       <article class="tile t-path" data-reveal>
         <span class="kicker">Le parcours</span>
         <h3>6 chapitres, de zéro à expert.</h3>
-        <p class="d">33 leçons dans l'ordre où tu en as besoin : d'abord comprendre, ensuite te défendre, puis passer à l'action.</p>
+        <p class="d">53 leçons dans l'ordre où tu en as besoin : d'abord comprendre, ensuite te défendre, puis passer à l'action.</p>
         <div class="path-box" id="pathBox">
           <svg viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
             <path id="trailBg" d="M40 210 C 150 210, 170 80, 230 80 S 330 220, 420 220 S 540 70, 610 70 S 720 230, 800 220 S 910 90, 960 90" fill="none" stroke="#C8E0BD" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22"/>
@@ -671,7 +657,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <h2>Monte de coupe en coupe.</h2>
         <p class="lead">Chaque semaine, ton portefeuille virtuel affronte ceux de ton salon. Les meilleurs montent à la coupe du dessus, les autres redescendent d'une marche. Huit coupes, du Plastique jusqu'au Champion.</p>
         <div class="lg-facts">
-          <div><i></i>Une manche par semaine, résultats le dimanche à 19 h</div>
+          <div><i></i>Une manche par semaine, résultats le dimanche à midi</div>
           <div><i></i>Classé sur ce que ton portefeuille gagne dans la semaine</div>
           <div><i></i>Entre amis, le classement du mois et la coupe de chacun</div>
         </div>
@@ -707,12 +693,6 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <figure class="top" style="--w:92%"><img src="img/cup-champion.webp" alt="" loading="lazy"><figcaption>Champion</figcaption></figure>
       </div>
     </div>
-
-    <div class="jr-strip">
-      <img src="img/jr1.webp" alt="">
-      <p><b>Et pour les 10-15 ans, le mode Junior.</b> « Mes premiers sous » : l'argent de poche, les achats en ligne, les arnaques, en 18 leçons courtes.</p>
-      <span class="tag">10-15 ans</span>
-    </div>
   </div>
 </section>
 
@@ -729,7 +709,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <h3>Gratuit</h3>
         <div class="price">0 €</div>
         <ul>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les 24 leçons de base</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les 41 leçons de base</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>1 leçon par jour</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Ta première Légende offerte</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E4F1DC"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le Journal et le quiz du jour</li>
@@ -749,14 +729,13 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
         <ul>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>4 leçons par jour</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Toutes les Légendes</li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>9 leçons exclusives</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>12 leçons exclusives</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>4 leçons bonus</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le portefeuille virtuel</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La Ligue et ses huit coupes</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Les gels de série</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Le Bilan final</li>
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>La révision du Dico chaque jour</li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFC94A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#3D2C00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Ton code parrain pour 2 jeunes</li>
         </ul>
         <p class="muted" style="margin-top:auto;padding-top:20px;font-size:14px">Abonnement mensuel sans engagement, résiliable à tout moment depuis ton iPhone.</p>
       </div>
@@ -764,7 +743,7 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
 
     <div class="faq" id="faq">
       <details data-reveal><summary>CRESKO me dit quoi acheter ?<i></i></summary><div class="a">Non, jamais. CRESKO t'explique comment fonctionnent la bourse, les ETF, l'épargne ou la fiscalité, pour que tu prennes tes décisions toi-même, en connaissant les règles.</div></details>
-      <details data-reveal><summary>C'est pour qui ?<i></i></summary><div class="a">Pour les débutants qui veulent enfin comprendre comment marchent la bourse et l'investissement, et se sentir prêts à passer à l'action. Et pour les 10-15 ans environ, le mode Junior « Mes premiers sous » parle de l'argent de tous les jours.</div></details>
+      <details data-reveal><summary>C'est pour qui ?<i></i></summary><div class="a">Pour les débutants qui veulent enfin comprendre comment marchent la bourse et l'investissement, et se sentir prêts à passer à l'action.</div></details>
       <details data-reveal><summary>Il faut de l'argent pour commencer ?<i></i></summary><div class="a">Non. Tu n'investis rien dans l'app : le portefeuille est virtuel, les leçons et les jeux ne coûtent rien à pratiquer.</div></details>
       <details data-reveal><summary>Ça prend combien de temps ?<i></i></summary><div class="a">Une leçon se boucle en quelques minutes. Garde ta série en venant un peu chaque jour, c'est tout.</div></details>
       <details data-reveal><summary>C'est disponible sur Android ?<i></i></summary><div class="a">CRESKO sort d'abord sur iPhone. Android viendra ensuite.</div></details>
@@ -972,13 +951,13 @@ footer .legal{flex-basis:100%;border-top:1px solid #214A32;padding-top:20px;font
     });
   });
   (function(){
-    // la manche ferme le dimanche à 19 h (heure de Paris) et reprend le lundi à 8 h
+    // la manche ferme le dimanche à midi (heure de Paris) et reprend le lundi à 8 h
     var fmt; try { fmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris', weekday:'short', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}); } catch(e){ return; }
     var DAYS = {Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6};
     function tick(){
       var parts = {}; fmt.formatToParts(new Date()).forEach(function(x){ parts[x.type] = x.value; });
       var now = DAYS[parts.weekday]*1440 + (+parts.hour)*60 + (+parts.minute);
-      var left = 6*1440 + 19*60 - now;
+      var left = 6*1440 + 12*60 - now;
       if (left <= 0){ $('#lgLabel').textContent = 'Nouvelle manche'; $('#lgLeft').textContent = 'lundi à 8 h'; return; }
       $('#lgLabel').textContent = 'Fin de la manche dans';
       var d = Math.floor(left/1440), h = Math.floor(left/60)%24, m = left%60;
